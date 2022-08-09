@@ -1,0 +1,20 @@
+@import '../../assets/sass/main.scss';
+
+.wrapperLeft {
+  width: 100%;
+  border: 1px solid red;
+  @include vp(tablet) {
+    width: 40%;
+  }
+}
+.titleWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 17px;
+  width: 100%;
+  background-color: var(--secondary-text-cl);
+}
+.titleText {
+  @include font(500, 14px, 1.21);
+}

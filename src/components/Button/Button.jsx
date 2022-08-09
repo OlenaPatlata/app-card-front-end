@@ -1,7 +1,11 @@
 import s from './Button.module.scss';
 
-const Button = props => {
-  return <button type="button">Text</button>;
+const Button = ({ onClick, text }) => {
+  return (
+    <button type="button" onClick={onClick}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;
