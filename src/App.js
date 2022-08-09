@@ -14,7 +14,7 @@ function App() {
         </p>
 
       <CardPage />
-      {/* <Loader/> */}
+      <Loader/>
       <ToastContainer
         position="top-right"
         autoClose={4000}
