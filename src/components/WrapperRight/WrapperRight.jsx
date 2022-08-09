@@ -1,6 +1,7 @@
 import s from './WrapperRight.module.scss';
 import List from 'components/List';
 import Button from 'components/Button';
+import Select from './../Select/Select';
 const WrapperRight = () => {
   const openModal = () => {
     console.log('openModal');
@@ -18,6 +19,7 @@ const WrapperRight = () => {
           console.log(1111);
         }}
       />
+      <Select />
     </div>
   );
 };
