@@ -1,7 +1,8 @@
-import Button from "components/Button";
+import CardData from "components/CardData";
+
 const CardPage = () => {
   return (
-    <Button/>
+    <CardData/>
   );
 }
 

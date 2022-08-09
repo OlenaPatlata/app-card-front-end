@@ -1,0 +1,99 @@
+@import '../../assets/sass/main.scss';
+
+.dropdown {
+  position: relative;
+  width: 100%;
+  height: 42px;
+  box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);
+  background-color: var(--main-bg-cl);
+  @include font(500, 14px, 1.7);
+  color: var(--placeholder-text-cl);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 13px;
+  padding-right: 13px;
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include vp(tablet) {
+    width: 482px;
+    margin-right: 25px;
+    margin-bottom: 0;
+  }
+  @include vp(desktop) {
+    width: 669px;
+    margin-right: 46px;
+  }
+}
+
+.dropdown__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown__wrapper .dropdown__input {
+  width: 90%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  border: none;
+  background-color: var(--main-bg-cl);
+  margin: 0;
+  padding: 0;
+}
+.dropdown__btn {
+  border: none;
+  background-color: transparent;
+  color: var(--main-text-cl);
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 250ms linear;
+}
+.react__icon {
+  width: 10%;
+}
+.dropdown__btn:hover,
+.dropdown__btn:focus {
+  color: var(--accent-active-cl);
+}
+.dropdown__btn:active {
+  color: var(--accent-active-cl-hover);
+}
+.dropdown__content {
+  position: absolute;
+  z-index: 2;
+  max-height: 50vh;
+  overflow: auto;
+  top: 110%;
+  left: 0;
+
+  width: 100%;
+  background: var(--main-bg-cl);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.dropdown__item {
+  padding-left: 13px;
+  padding-right: 13px;
+  @include font(500, 14px, 1.7);
+  color: var(--placeholder-text-cl);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  transition: all 250ms linear;
+}
+.dropdown__item:hover {
+  color: var(--main-text-cl);
+}
+.dropdown__item:focus {
+  color: var(--main-text-cl);
+}
+.dropdown__item:not(:last-child) {
+  border-bottom: 1px solid var(--scrollbar-bg-cl);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+}

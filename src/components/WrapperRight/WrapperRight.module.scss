@@ -1,0 +1,13 @@
+@import '../../assets/sass/main.scss';
+
+.wrapperRight {
+  width: 100%;
+  border: 1px solid green;
+  @include vp(tablet) {
+    width: 60%;
+  }
+}
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+}
