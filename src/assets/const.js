@@ -35,7 +35,86 @@ export const currenсy = [
     "name": "Китайский юань женьминьби"
   },
 ]
+export const listCards = [
+  {
+    "bank": "Privat",
+    "typeCard": "Universal Card",
+    "paymentSystemType": "VISA",
+    "cardNumber": 123412341234,
+    "expireDate": "12/25",
+    "amount": 100.25,
+    "ccy": "UAN",
+    "cardHolder":""
+  },
+  {
+    "bank": "MonoBancCipr",
+    "typeCard": "Universal",
+    "paymentSystemType": "VISA",
+    "cardNumber": 123412341234,
+    "expireDate": "12/25",
+    "amount": 10.25,
+    "ccy": "CNY",
+    "cardHolder":""
+  },
+  {
+    "bank": "Mono",
+    "typeCard": "Universal",
+    "paymentSystemType": "VISA",
+    "cardNumber": 123412341234,
+    "expireDate": "12/25",
+    "amount": 10000.25,
+    "ccy": "UAN",
+    "cardHolder":""
+  },
+  {
+    "bank": "Mono",
+    "typeCard": "Universal",
+    "paymentSystemType": "VISA",
+    "cardNumber": 123412341234,
+    "expireDate": "12/01",
+    "amount": 1200.25,
+    "ccy": "UAN",
+    "cardHolder":""
+  },
+    {
+    "bank": "MonoPOle",
+    "typeCard": "Debet",
+    "paymentSystemType": "VISA",
+    "cardNumber": 123412341234,
+    "expireDate": "12/01",
+    "amount": 5060,
+    "ccy": "EUR",
+    "cardHolder":""
+  }
+]
 
+export const user = {
+  "name": "mister Smith",
+  "email": "smith@ia.net",
+  "cash": [
+    {
+      "amount": 1300.25,
+      "ccy": "UAN"
+    },
+    {
+      "amount": 150.25,
+      "ccy": "CHF"
+    },
+    {
+      "amount": 19000.25,
+      "ccy": "EUR"
+    },
+    {
+      "amount": 1200.25,
+      "ccy": "USD"
+    },
+     {
+      "amount": 15600,
+      "ccy": "GBP"
+    },
+  ]
+
+}
 
 
 // AED	784	Дирхам ОАЭ	

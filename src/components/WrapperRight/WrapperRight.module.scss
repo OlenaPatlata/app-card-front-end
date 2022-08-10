@@ -2,12 +2,25 @@
 
 .wrapperRight {
   width: 100%;
-  border: 1px solid green;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: var(--scrollbar-bg-cl);
+  box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
   @include vp(tablet) {
     width: 60%;
   }
 }
 .buttonWrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
+  @include vp(tablet) {
+    flex-direction: row;
+  }
+}
+.buttonWrapper:first-child {
+  margin-bottom: 15px;
 }

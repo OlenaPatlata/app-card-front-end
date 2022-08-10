@@ -1,19 +1,32 @@
 import s from './List.module.scss';
 import { v4 as uuidv4 } from 'uuid';
-import { type } from '@testing-library/user-event/dist/type';
-import Item from 'components/Item';
 
-const List = ({ name, arr, onClick }) => {
+import ItemCard from 'components/ItemCard';
+import ItemText from 'components/ItemText';
+
+const List = ({ name, arr, onClick, text, title }) => {
   return (
     <ul className={s[name]} key={uuidv4()}>
       {arr?.map(elem => {
+        if (name === 'itemText') {
+          return (
+            <ItemText
+              elem={elem}
+              key={uuidv4()}
+              name={name}
+              onClick={onClick}
+              text={text}
+              title={title}
+            />
+          );
+        }
         return (
-          <Item
+          <ItemCard
             elem={elem}
             key={uuidv4()}
-            name={type}
+            name={name}
             onClick={onClick}
-            text="Edit"
+            text={text}
           />
         );
       })}

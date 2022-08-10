@@ -2,19 +2,20 @@
 
 .wrapperLeft {
   width: 100%;
-  border: 1px solid red;
+  padding: 15px;
+  background-color: var(--scrollbar-bg-cl);
+  box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
+  margin-bottom: 15px;
   @include vp(tablet) {
     width: 40%;
+    margin-bottom: 0;
+    margin-right: 30px;
   }
 }
-.titleWrapper {
+.partWrapper {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-right: 17px;
-  width: 100%;
-  background-color: var(--secondary-text-cl);
+  flex-direction: column;
 }
-.titleText {
-  @include font(500, 14px, 1.21);
+.partWrapper:not(:last-child) {
+  margin-bottom: 15px;
 }
