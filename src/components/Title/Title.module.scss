@@ -1,0 +1,14 @@
+@import '../../assets/sass/main.scss';
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--main-text-cl);
+  margin-bottom: 5px;
+}
+.titleSmall {
+  @include font(600, 16px, 1.5);
+}
+.titleBig {
+  @include font(600, 20px, 1.5);
+}

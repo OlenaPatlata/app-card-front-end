@@ -1,7 +1,8 @@
 import s from './WrapperRight.module.scss';
 import List from 'components/List';
 import Button from 'components/Button';
-import Select from './../Select/Select';
+import { listCards } from 'assets/const';
+
 const WrapperRight = () => {
   const openModal = () => {
     console.log('openModal');
@@ -9,17 +10,17 @@ const WrapperRight = () => {
   return (
     <div className={s.wrapperRight}>
       <div className={s.buttonWrapper}>
-        <Button onClick={openModal} text="Додати картку" />
-        <Button onClick={openModal} text="Додати готівку" />
+        <Button onClick={openModal} text="Додати картку" name="add" />
+        <Button onClick={openModal} text="Додати готівку" name="add" />
       </div>
-
       <List
-        name="listBig"
+        name="itemCard"
+        text="Delete"
+        arr={listCards}
         onClick={() => {
-          console.log(1111);
+          console.log('delete card');
         }}
       />
-      <Select />
     </div>
   );
 };

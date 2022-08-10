@@ -8,13 +8,8 @@ import Container from './components/Container/Container';
 function App() {
   return (
     <Container>
-
-        <p>
-          Hello world!
-        </p>
-
       <CardPage />
-      <Loader/>
+      {/* <Loader/> */}
       <ToastContainer
         position="top-right"
         autoClose={4000}

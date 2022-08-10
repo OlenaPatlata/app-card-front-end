@@ -1,5 +1,111 @@
 @import '../../assets/sass/main.scss';
+
 .deleteBtn {
-  background-color: red;
-  color: var(--main-text-cl);
+  @include font(500, 14px, 2.71);
+  color: var(--additional-text-cl);
+  background-color: var(--btn-del-color);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid var(--main-text-cl);
+  transition: all 250ms linear;
+  border-radius: 10px;
+}
+.deleteBtn:hover,
+.deleteBtn:focus {
+  background-color: var(--btn-del-color-hover);
+  border: 1px solid var(--btn-del-color-hover);
+  color: var(--main-bg-cl);
+  box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
+}
+.deleteBtn:active {
+  background-color: var(--training-bg-cl);
+  color: var(--additional-text-cl);
+  border: 1px solid var(--main-text-cl);
+}
+.deleteBtn:disabled {
+  cursor: auto;
+}
+.deleteBtn:disabled.deleteBtn:hover {
+  background-color: var(--secondary-bg-cl);
+  border: 1px solid var(--additional-bg-cl);
+  box-shadow: none;
+}
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: none;
+  background-color: transparent;
+  width: 27px;
+  height: 18px;
+}
+
+.icon {
+  color: var(--placeholder-text-cl);
+}
+
+.editBtn {
+  @include font(500, 14px, 2.71);
+  color: var(--additional-text-cl);
+  background-color: var(--placeholder-text-cl);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid var(--main-text-cl);
+  transition: all 250ms linear;
+  border-radius: 10px;
+  margin-left: auto;
+}
+.editBtn:hover,
+.editBtn:focus {
+  background-color: var(--additional-bg-cl);
+  border: 1px solid var(--additional-bg-cl);
+  box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
+}
+.editBtn:active {
+  background-color: var(--training-bg-cl);
+}
+.editBtn:disabled {
+  cursor: auto;
+}
+.editBtn:disabled.editBtn:hover {
+  background-color: var(--secondary-bg-cl);
+  border: 1px solid var(--additional-bg-cl);
+  box-shadow: none;
+}
+
+.add {
+  @include font(500, 14px, 2.71);
+  background-color: rgb(89, 160, 89);
+  color: var(--additional-text-cl);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid var(--main-text-cl);
+  transition: all 250ms linear;
+  border-radius: 10px;
+  @include vp(tablet) {
+    width: 50%;
+  }
+}
+.add:hover,
+.add:focus {
+  background-color: rgb(64, 112, 64);
+  border: 1px solid var(--additional-bg-cl);
+  box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
+}
+.add:active {
+  background-color: var(--training-bg-cl);
+}
+
+.add:not(:last-child) {
+  margin-bottom: 15px;
+  @include vp(tablet) {
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
 }

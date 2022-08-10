@@ -1,1 +1,9 @@
 @import '../../assets/sass/main.scss';
+.itemText {
+  display: flex;
+  flex-direction: column;
+}
+.itemCard {
+  display: flex;
+  flex-direction: column;
+}
