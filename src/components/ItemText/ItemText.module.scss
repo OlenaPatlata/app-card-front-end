@@ -3,6 +3,8 @@
   display: flex;
   justify-content: flex-start;
   color: var(--main-text-cl);
+  border-bottom: 1px solid rgba(36, 42, 55, 0.15);
+  padding-bottom: 5px;
   @include font(500, 14px, 1.5);
   @include vp(desktop) {
     @include font(500, 16px, 1.5);
@@ -48,6 +50,9 @@
   display: flex;
   // flex-direction: row;
   @include vp(tablet) {
-    width: 80%;
+    max-width: 70%;
+  }
+  @include vp(desktop) {
+    max-width: 90%;
   }
 }

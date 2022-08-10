@@ -2,15 +2,39 @@ import s from './ItemCard.module.scss';
 import Button from 'components/Button';
 import Media from 'react-media';
 import { MdOutlineDeleteOutline } from 'react-icons/md';
+import { useState } from 'react';
+import {
+  getHideNumber,
+  getShowNumber,
+} from 'assets/helpers/itemCard/itemCardFunc';
+import { toast } from 'react-toastify';
 
 const ItemCard = ({ name, onClick, text, elem }) => {
+  const [show, setShow] = useState(false);
+  const onShowNumber = () => setShow(!show);
+  const hideNumber = getHideNumber(elem.cardNumber);
+  const showNumber = getShowNumber(elem.cardNumber);
+
+  const copyHandler = async () => {
+    await navigator.clipboard.writeText(showNumber);
+    toast.success(`Number ${showNumber} copied`);
+  };
   return (
     <li className={s[name]}>
       <div className={s.cardWrapper}>
         <div className={s.cardContent}>
           <div className={s.lineWrapper}>
             <div className={s.cardNameBanc}>{elem.bank}</div>
-            <div className={s.cardLogo}></div>
+            {elem.paymentSystemType === 'MasterCard' && (
+              <div className={s.cardLogoMC}></div>
+            )}
+            {elem.paymentSystemType === 'VISA' && (
+              <div className={s.cardLogoVisa}></div>
+            )}
+            {elem.paymentSystemType !== 'VISA' &&
+              elem.paymentSystemType !== 'MasterCard' && (
+                <div className={s.cardLogoText}>{elem.paymentSystemType}</div>
+              )}
           </div>
           <div className={s.lineWrapper}>
             <div className={s.cardAmount}>
@@ -19,8 +43,18 @@ const ItemCard = ({ name, onClick, text, elem }) => {
             <div className={s.cardType}>{elem.typeCard}</div>
           </div>
           <div className={s.lineWrapper}>
-            <div className={s.cardNumber}>{elem.cardNumber}</div>
-            <button type="button" onClick={onClick} className={s.cardBtnCopy}>
+            <button
+              className={s.cardNumber}
+              type="button"
+              onClick={onShowNumber}
+            >
+              {show ? showNumber : hideNumber}
+            </button>
+            <button
+              type="button"
+              onClick={copyHandler}
+              className={s.cardBtnCopy}
+            >
               copy
             </button>
           </div>
