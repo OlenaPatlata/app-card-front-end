@@ -11,6 +11,10 @@
     margin-bottom: 0;
     margin-right: 30px;
   }
+  @include vp(desktop) {
+    width: 50%;
+    padding: 30px;
+  }
 }
 .partWrapper {
   display: flex;

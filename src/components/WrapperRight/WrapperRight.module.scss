@@ -11,6 +11,10 @@
   @include vp(tablet) {
     width: 60%;
   }
+  @include vp(desktop) {
+    width: 50%;
+    padding: 30px;
+  }
 }
 .buttonWrapper {
   width: 100%;

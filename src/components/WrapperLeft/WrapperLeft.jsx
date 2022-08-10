@@ -17,7 +17,16 @@ const WrapperLeft = () => {
         <List
           title="Готівка"
           name="itemText"
-          arr={user?.cash}
+          arr={
+            user?.cash.length > 0
+              ? user?.cash
+              : [
+                  {
+                    amount: 0,
+                    ccy: 'UAN',
+                  },
+                ]
+          }
           text="Edit"
           onClick={() => {
             console.log('edit');
