@@ -1,7 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import CardPage from "pages/CardPage";
-import Loader from './components/Loader/Loader';
+
 import Container from './components/Container/Container';
 
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <Container>
       <CardPage />
-      {/* <Loader/> */}
+
       <ToastContainer
         position="top-right"
         autoClose={4000}
