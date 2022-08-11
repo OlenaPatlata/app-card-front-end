@@ -2,10 +2,14 @@ import s from './ItemText.module.scss';
 import Button from 'components/Button';
 import Media from 'react-media';
 import { GrEdit } from 'react-icons/gr';
+import { v4 as uuidv4 } from 'uuid';
 
-const ItemText = ({ name, onClick, text, elem, title }) => {
+const ItemText = ({ name, onClick, text, elem, title, setElem }) => {
+  const handleId = e => {
+    setElem(elem);
+  };
   return (
-    <li className={s[name]}>
+    <li className={s[name]} id={uuidv4()} onClick={handleId}>
       <div className={s.textWrapper}>
         <div className={s.empty}>-</div>
         {title === 'Мої картки' && (

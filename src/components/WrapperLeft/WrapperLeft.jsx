@@ -3,9 +3,15 @@ import List from 'components/List';
 import { listCards, user } from 'assets/const';
 import Title from 'components/Title';
 import { getBalanceArr } from 'assets/helpers/wrapperLeft/wrapperLeftFunc';
+import useToggle from './../../hooks/useToggle';
+import ModalEditCash from './../Modals/ModalEditCash/ModalEditCash';
+import { useState } from 'react';
 
 const WrapperLeft = () => {
   const balanceArr = getBalanceArr(listCards, user?.cash);
+  const [editModal, setEditModal] = useToggle();
+  const [elem, setElem] = useState({ amount: 0, ccy: '' });
+
   return (
     <div className={s.wrapperLeft}>
       <div className={s.partWrapper}>
@@ -17,6 +23,7 @@ const WrapperLeft = () => {
         <List
           title="Готівка"
           name="itemText"
+          setElem={setElem}
           arr={
             user?.cash.length > 0
               ? user?.cash
@@ -28,8 +35,8 @@ const WrapperLeft = () => {
                 ]
           }
           text="Edit"
-          onClick={() => {
-            console.log('edit');
+          onClick={e => {
+            setEditModal(true);
           }}
         />
       </div>
@@ -40,11 +47,21 @@ const WrapperLeft = () => {
           name="itemText"
           arr={listCards}
           text="Edit"
-          onClick={() => {
-            console.log(1111);
+          setElem={setElem}
+          onClick={e => {
+            setEditModal(true);
           }}
         />
       </div>
+      {editModal && (
+        <ModalEditCash
+          elem={elem}
+          open={editModal}
+          onClose={() => {
+            setEditModal(false);
+          }}
+        />
+      )}
     </div>
   );
 };

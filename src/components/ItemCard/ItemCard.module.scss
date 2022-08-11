@@ -28,6 +28,7 @@
   @include vp(tablet) {
     width: 280px;
     height: 176px;
+    margin-right: 10px;
   }
   @include vp(desktop) {
     width: 300px;
