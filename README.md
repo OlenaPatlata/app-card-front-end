@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+Локально проект запускається за допомогою скрипту npm start. Для деплоя проекту
+на Netlify необхідно застосувати скрипт npm run deploy.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+При написанні тестового завдання по реалізації гаманця виконано наступні
+завдання:
 
-## Available Scripts
+- дизайн для трьох ширин екрану (мобілка, планшет, десктоп);
 
-In the project directory, you can run:
+- при натисканні користувачем на кнопку «Edit» (для редагування готівкових сум
+  та грошових сум на картках) в модальному вікні з₴являється форма, в якій вже
+  відображено сума коштів та валюта, яка на даний час зберігається в базі даних.
+  При коригування суми користувачем введена сума коригується і відображається
+  вже з двома цифрами після точки;
 
-### `npm start`
+- вибір валюти: написано кастомний селект для обирання виду валюти з усіх
+  можливих валют світу шляхом пошуку у випадаючому списку або шляхом введення в
+  фільтр коду валюти з трьох літер / назви валюти / цифрового коду валюти (зараз
+  відображається 7 видів валют, можна додати безліч інших видів валют);
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- відображення загального балансу після опрацювання даних отриманих з бази
+  даних;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- написано логіку відображення замаскованого номеру картки з можливістю показати
+  та скопіювати повний номер картки;
 
-### `npm test`
+- тип платіжної системи для Visa, Mastercard виводиться у вигляді логотипу, для
+  інших ПС – текстом;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- написано три кастомні хуки (useMouseClose - закриття елементів кліком по
+  екрану, useCloseByEsc - закриття елементів натисканням на Esc, useToggle – для
+  зміни стану на протилежний).
 
-### `npm run build`
+  Розпочато виконання наступних завдань для розширення функціоналу проекту
+  (виконання в процесі, ще не завершено):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  1. back-end частина:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - реєстрація, верифікація та логінізація користувача;
+  - зберігання отриманих даних з використанням бази даних MongoDB;
+  - здійснення валідації даних отриманих з front-end частини від користувача;
+  - написання мідлварів, контролерів для end-points;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  2. front-end частина буде написано:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - логіку та верстку по реєстрації та логінізації користувача,
+  - додано heder з навігаціїєю та logоut;
+  - буде завершено написання логіки для всіх модальних вікон (додавання картки,
+    коригування грошових сум, видалення картки);
+  - логіку валідації значень номера картки, expire date, cvv;
+  - логіку підтримки декількох мов інтерфейсу;
+  - також є можливість розширити функціонал шляхом відображення статистики у
+    вигляді графіка (в розрізі видів валют та сум).
