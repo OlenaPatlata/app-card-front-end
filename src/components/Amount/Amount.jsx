@@ -22,11 +22,9 @@ const Amount = ({ setFieldValue, elem }) => {
     handleAmount(String(elem.amount))
   );
   const onChangeFilter = e => {
-    console.log(e.target.value);
     const { value } = e.target;
     setFieldValue({ amount: handleAmount(value) });
     setFilterCurrenсy(value);
-    // handleBlur(e);
   };
   return (
     <div className={s.moneyWrapper}>
@@ -41,9 +39,6 @@ const Amount = ({ setFieldValue, elem }) => {
         onChange={onChangeFilter}
         onBlur={e => setFilterCurrenсy(handleAmount(e.target.value))}
       />
-      {/* <span className={s.moneyError}>
-        <ErrorMessage name="amount" />
-      </span> */}
     </div>
   );
 };
