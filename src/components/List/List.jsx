@@ -4,13 +4,14 @@ import { v4 as uuidv4 } from 'uuid';
 import ItemCard from 'components/ItemCard';
 import ItemText from 'components/ItemText';
 
-const List = ({ name, arr, onClick, text, title }) => {
+const List = ({ name, arr, onClick, text, title, setElem }) => {
   return (
     <ul className={s[name]} key={uuidv4()}>
       {arr?.map(elem => {
         if (name === 'itemText') {
           return (
             <ItemText
+              setElem={setElem}
               elem={elem}
               key={uuidv4()}
               name={name}

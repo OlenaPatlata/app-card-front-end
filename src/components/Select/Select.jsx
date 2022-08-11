@@ -4,13 +4,14 @@ import { useCloseByEsc } from 'hooks/useCloseByEsc';
 import { useMouseClose } from 'hooks/useMouseClose';
 import s from './Select.module.scss';
 
-const Select = () => {
+const Select = ({ setFieldCurrecy, elem }) => {
   const [isActive, setIsActive] = useState(false);
-  const [filterCurrenсy, setFilterCurrenсy] = useState('');
+  const [filterCurrenсy, setFilterCurrenсy] = useState(elem.ccy);
 
   // При клике по инпутy открывается/закрывается селект
   const handleClick = () => {
     setIsActive(!isActive);
+    setFilterCurrenсy('');
   };
   // Забрасывает в локальный стейт слово введенное в инпут
   const onChangeFilter = e => {
@@ -30,7 +31,7 @@ const Select = () => {
       ({ ccy, number, name }) =>
         ccy.toLocaleLowerCase().includes(normWord) ||
         name.toLocaleLowerCase().includes(normWord) ||
-        number === filterCurrenсy
+        String(number).includes(filterCurrenсy)
     );
   };
   // Результатом выполнения функции является список валют по буквам / цифрам введенным в инпут
@@ -51,6 +52,7 @@ const Select = () => {
       <div className={s.dropdown__wrapper} onClick={handleClick}>
         {isActive ? (
           <input
+            autoComplete="off"
             className={s.dropdown__input}
             type="text"
             name="filter"
@@ -60,6 +62,7 @@ const Select = () => {
           />
         ) : (
           <input
+            autoComplete="off"
             readOnly
             className={s.dropdown__input}
             type="text"
@@ -78,6 +81,7 @@ const Select = () => {
               onClick={e => {
                 setFilterCurrenсy(elem.ccy);
                 setIsActive(false);
+                setFieldCurrecy({ ccy: filterCurrenсy });
               }}
               className={s.dropdown__item}
             >

@@ -11,6 +11,12 @@
   border: 1px solid var(--main-text-cl);
   transition: all 250ms linear;
   border-radius: 10px;
+  @include vp(tablet) {
+    width: 20%;
+    @include font(500, 12px, 2.71);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 .deleteBtn:hover,
 .deleteBtn:focus {
@@ -108,4 +114,42 @@
     margin-bottom: 0;
     margin-right: 15px;
   }
+}
+
+.canselBtn {
+  @include font(500, 14px, 2.71);
+  color: var(--additional-text-cl);
+  background-color: var(--btn-del-color);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid var(--main-text-cl);
+  transition: all 250ms linear;
+  border-radius: 10px;
+  @include vp(tablet) {
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.canselBtn:hover,
+.canselBtn:focus {
+  background-color: var(--btn-del-color-hover);
+  border: 1px solid var(--btn-del-color-hover);
+  color: var(--main-bg-cl);
+  box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
+}
+.canselBtn:active {
+  background-color: var(--training-bg-cl);
+  color: var(--additional-text-cl);
+  border: 1px solid var(--main-text-cl);
+}
+.canselBtn:disabled {
+  cursor: auto;
+}
+.canselBtn:disabled.canselBtn:hover {
+  background-color: var(--secondary-bg-cl);
+  border: 1px solid var(--additional-bg-cl);
+  box-shadow: none;
 }

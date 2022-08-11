@@ -6,7 +6,7 @@ import { useCloseByEsc } from './../../hooks/useCloseByEsc';
 import s from './ModalWrapper.module.scss';
 
 const ModalWrapper = ({ size = 'small', open, onClose, children }) => {
-  const modalRef = useRef(document.getElementById('modal-root'));
+  const modalRef = useRef(document.getElementById('modalRoot'));
   useCloseByEsc(onClose, open);
 
   return (

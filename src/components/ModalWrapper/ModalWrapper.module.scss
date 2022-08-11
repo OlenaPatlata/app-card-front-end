@@ -1,19 +1,16 @@
 @import '../../assets/sass/main.scss';
 .modal {
-  // width: calc(100vw - 40px);
   max-height: calc(100vh - 40px);
   background-color: var(--main-bg-cl);
-  overflow: hidden;
   box-shadow: 10px 10px 20px rgba(9, 30, 63, 0.2);
-
-  @include mq(mobile) {
-    width: 280px;
+  border-radius: 10px;
+  @include vp(mobile) {
+    width: calc(100vw - 45px);
   }
-
-  @include mq(tablet) {
-    width: 394px;
-    &.large {
-      width: 608px;
-    }
+  @include vp(tablet) {
+    width: 50vw;
+  }
+  @include vp(desktop) {
+    width: 50vw;
   }
 }
