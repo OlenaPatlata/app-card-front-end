@@ -23,5 +23,8 @@
   margin-bottom: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  @include font(500, 14px, 2.71);
+}
+.text {
+  text-align: center;
+  @include font(500, 14px, 1.51);
 }
