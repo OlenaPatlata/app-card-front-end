@@ -2,8 +2,12 @@ import s from './WrapperRight.module.scss';
 import List from 'components/List';
 import Button from 'components/Button';
 import { listCards } from 'assets/const';
+import useToggle from './../../hooks/useToggle';
+import { useState } from 'react';
+import ModalDelCard from 'components/Modals/ModalDelCard';
 
 const WrapperRight = () => {
+  const [delModal, setDelModal] = useToggle();
   const openModal = () => {
     console.log('openModal');
   };
@@ -17,10 +21,18 @@ const WrapperRight = () => {
         name="itemCard"
         text="Delete"
         arr={listCards}
-        onClick={() => {
-          console.log('delete card');
+        onClick={e => {
+          setDelModal(true);
         }}
       />
+      {delModal && (
+        <ModalDelCard
+          open={delModal}
+          onClose={() => {
+            setDelModal(false);
+          }}
+        />
+      )}
     </div>
   );
 };

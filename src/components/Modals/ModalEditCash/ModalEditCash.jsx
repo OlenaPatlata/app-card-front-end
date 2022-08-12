@@ -19,7 +19,7 @@ const ModalEditCash = ({ open, onClose, elem }) => {
         </div>
         <div className={s.buttonWrapper}>
           <Button onClick={onClose} text="Save" name="add" />
-          <Button onClick={onClose} text="Cancel" name="canselBtn" />
+          <Button onClick={onClose} text="Cancel" name="cancelBtn" />
         </div>
       </div>
     </ModalWrapper>

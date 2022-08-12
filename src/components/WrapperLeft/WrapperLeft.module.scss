@@ -3,7 +3,7 @@
 .wrapperLeft {
   width: 100%;
   padding: 15px;
-  background-color: var(--scrollbar-bg-cl);
+  background-color: var(--main-bg-cl);
   box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
   margin-bottom: 15px;
   @include vp(tablet) {

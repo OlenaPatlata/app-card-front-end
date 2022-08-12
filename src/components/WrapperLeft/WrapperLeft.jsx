@@ -4,8 +4,9 @@ import { listCards, user } from 'assets/const';
 import Title from 'components/Title';
 import { getBalanceArr } from 'assets/helpers/wrapperLeft/wrapperLeftFunc';
 import useToggle from './../../hooks/useToggle';
-import ModalEditCash from './../Modals/ModalEditCash/ModalEditCash';
+
 import { useState } from 'react';
+import ModalEditCash from 'components/Modals/ModalEditCash';
 
 const WrapperLeft = () => {
   const balanceArr = getBalanceArr(listCards, user?.cash);

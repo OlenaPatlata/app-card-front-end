@@ -2,33 +2,33 @@
 
 .deleteBtn {
   @include font(500, 14px, 2.71);
-  color: var(--additional-text-cl);
-  background-color: var(--btn-del-color);
+  color: var(--auth-bg-cl);
+  background-color: var(--btn-del-cl);
   padding-top: 2px;
   padding-bottom: 2px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   border: 1px solid var(--main-text-cl);
   transition: all 250ms linear;
   border-radius: 10px;
   @include vp(tablet) {
     width: 20%;
-    @include font(500, 12px, 2.71);
+    @include font(500, 14px, 2.71);
     padding-left: 10px;
     padding-right: 10px;
   }
 }
 .deleteBtn:hover,
 .deleteBtn:focus {
-  background-color: var(--btn-del-color-hover);
-  border: 1px solid var(--btn-del-color-hover);
-  color: var(--main-bg-cl);
+  background-color: var(--btn-del-cl-hover);
+  border: 1px solid var(--btn-del-cl-hover);
+  color: var(--main-text-cl);
   box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
 }
 .deleteBtn:active {
-  background-color: var(--training-bg-cl);
+  background-color: var(--btn-del-cl-active);
   color: var(--additional-text-cl);
-  border: 1px solid var(--main-text-cl);
+  border: 1px solid var(--btn-del-cl-active);
 }
 .deleteBtn:disabled {
   cursor: auto;
@@ -49,13 +49,13 @@
 }
 
 .icon {
-  color: var(--placeholder-text-cl);
+  color: var(--main-text-cl);
 }
 
 .editBtn {
   @include font(500, 14px, 2.71);
   color: var(--additional-text-cl);
-  background-color: var(--placeholder-text-cl);
+  background-color: var(--btn-edit-cl);
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 20px;
@@ -67,12 +67,13 @@
 }
 .editBtn:hover,
 .editBtn:focus {
-  background-color: var(--additional-bg-cl);
-  border: 1px solid var(--additional-bg-cl);
+  background-color: var(--btn-edit-cl-hover);
+  border: 1px solid var(--btn-edit-cl-hover);
   box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
 }
 .editBtn:active {
-  background-color: var(--training-bg-cl);
+  background-color: var(--btn-edit-cl-active);
+  border: 1px solid var(--btn-edit-cl-active);
 }
 .editBtn:disabled {
   cursor: auto;
@@ -85,8 +86,8 @@
 
 .add {
   @include font(500, 14px, 2.71);
-  background-color: rgb(89, 160, 89);
-  color: var(--additional-text-cl);
+  background-color: var(--btn-add-cl);
+  color: var(--auth-bg-cl);
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 20px;
@@ -100,12 +101,14 @@
 }
 .add:hover,
 .add:focus {
-  background-color: rgb(64, 112, 64);
-  border: 1px solid var(--additional-bg-cl);
+  background-color: var(--btn-add-cl-hover);
+  color: var(--main-text-cl);
+  border: 1px solid var(--btn-add-cl-hover);
   box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
 }
 .add:active {
-  background-color: var(--training-bg-cl);
+  background-color: var(--btn-add-cl-active);
+  border: 1px solid var(--btn-add-cl-active);
 }
 
 .add:not(:last-child) {
@@ -116,10 +119,10 @@
   }
 }
 
-.canselBtn {
+.cancelBtn {
   @include font(500, 14px, 2.71);
   color: var(--additional-text-cl);
-  background-color: var(--btn-del-color);
+  background-color: var(--btn-cancel-cl);
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 20px;
@@ -133,22 +136,21 @@
     padding-right: 10px;
   }
 }
-.canselBtn:hover,
-.canselBtn:focus {
-  background-color: var(--btn-del-color-hover);
-  border: 1px solid var(--btn-del-color-hover);
-  color: var(--main-bg-cl);
+.cancelBtn:hover,
+.cancelBtn:focus {
+  background-color: var(--btn-cancel-cl-hover);
+  border: 1px solid var(--btn-cancel-cl-hover);
   box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
 }
-.canselBtn:active {
-  background-color: var(--training-bg-cl);
-  color: var(--additional-text-cl);
+.cancelBtn:active {
+  background-color: var(--btn-cancel-cl-hover);
+  border: 1px solid var(--btn-cancel-cl-hover);
   border: 1px solid var(--main-text-cl);
 }
-.canselBtn:disabled {
+.cancelBtn:disabled {
   cursor: auto;
 }
-.canselBtn:disabled.canselBtn:hover {
+.cancelBtn:disabled.cancelBtn:hover {
   background-color: var(--secondary-bg-cl);
   border: 1px solid var(--additional-bg-cl);
   box-shadow: none;
