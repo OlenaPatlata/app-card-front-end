@@ -1,11 +1,10 @@
-import s from './ModalEditCash.module.scss';
+import s from './ModalAddCard.module.scss';
 import ModalWrapper from 'components/ModalWrapper';
 import Amount from 'components/Amount';
 import Select from 'components/Select';
 import Button from 'components/Button';
 import { useState } from 'react';
-
-const ModalEditCash = ({
+const ModalAddCard = ({
   open,
   onClose,
   elem = { amount: '0', ccy: 'UAN' },
@@ -30,4 +29,4 @@ const ModalEditCash = ({
   );
 };
 
-export default ModalEditCash;
+export default ModalAddCard;

@@ -2,9 +2,8 @@
 
 .wrapperLeft {
   width: 100%;
-  padding: 15px;
-  background-color: var(--main-bg-cl);
-  box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
+  background-color: transparent;
+
   margin-bottom: 15px;
   @include vp(tablet) {
     width: 40%;
@@ -17,8 +16,15 @@
   }
 }
 .partWrapper {
+  background-color: var(--main-bg-cl);
+  box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
   display: flex;
   flex-direction: column;
+  padding: 15px;
+  border-radius: 10px;
+  @include vp(desktop) {
+    padding: 30px;
+  }
 }
 .partWrapper:not(:last-child) {
   margin-bottom: 15px;

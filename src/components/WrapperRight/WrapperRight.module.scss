@@ -8,6 +8,7 @@
   padding-right: 15px;
   background-color: var(--main-bg-cl);
   box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
+  border-radius: 10px;
   @include vp(tablet) {
     width: 60%;
   }

@@ -3,19 +3,33 @@ import List from 'components/List';
 import Button from 'components/Button';
 import { listCards } from 'assets/const';
 import useToggle from './../../hooks/useToggle';
-// import { useState } from 'react';
+import { useState } from 'react';
 import ModalDelCard from 'components/Modals/ModalDelCard';
+import ModalEditCash from 'components/Modals/ModalEditCash';
+import ModalAddCard from 'components/Modals/ModalAddCard';
 
 const WrapperRight = () => {
+  const [editModal, setEditModal] = useToggle();
+  // const [elem, setElem] = useState({ amount: 0, ccy: '' });
   const [delModal, setDelModal] = useToggle();
-  const openModal = () => {
-    console.log('openModal');
-  };
+  const [addModal, setAddModal] = useToggle();
   return (
     <div className={s.wrapperRight}>
       <div className={s.buttonWrapper}>
-        <Button onClick={openModal} text="Додати картку" name="add" />
-        <Button onClick={openModal} text="Додати готівку" name="add" />
+        <Button
+          onClick={e => {
+            setAddModal(true);
+          }}
+          text="Додати картку"
+          name="add"
+        />
+        <Button
+          onClick={e => {
+            setEditModal(true);
+          }}
+          text="Додати готівку"
+          name="add"
+        />
       </div>
       <List
         name="itemCard"
@@ -25,11 +39,27 @@ const WrapperRight = () => {
           setDelModal(true);
         }}
       />
+      {addModal && (
+        <ModalAddCard
+          open={addModal}
+          onClose={() => {
+            setAddModal(false);
+          }}
+        />
+      )}
       {delModal && (
         <ModalDelCard
           open={delModal}
           onClose={() => {
             setDelModal(false);
+          }}
+        />
+      )}
+      {editModal && (
+        <ModalEditCash
+          open={editModal}
+          onClose={() => {
+            setEditModal(false);
           }}
         />
       )}
