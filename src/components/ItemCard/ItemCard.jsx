@@ -12,8 +12,8 @@ import { toast } from 'react-toastify';
 const ItemCard = ({ name, onClick, text, elem }) => {
   const [show, setShow] = useState(false);
   const onShowNumber = () => setShow(!show);
-  const hideNumber = getHideNumber(elem.cardNumber);
-  const showNumber = getShowNumber(elem.cardNumber);
+  const hideNumber = getHideNumber(elem.number);
+  const showNumber = getShowNumber(elem.number);
 
   const copyHandler = async () => {
     await navigator.clipboard.writeText(showNumber);
@@ -40,7 +40,7 @@ const ItemCard = ({ name, onClick, text, elem }) => {
             <div className={s.cardAmount}>
               {elem.amount}&nbsp;{elem.ccy}
             </div>
-            <div className={s.cardType}>{elem.typeCard}</div>
+            <div className={s.cardType}>{elem.type}</div>
           </div>
           <div className={s.lineWrapper}>
             <button

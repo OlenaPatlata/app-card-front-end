@@ -34,7 +34,6 @@ const Amount = ({ setFieldValue, elem }) => {
         type="text"
         placeholder="0.00"
         className={s.money}
-        // defaultValue={filterCurrenсy}
         value={filterCurrenсy}
         onChange={onChangeFilter}
         onBlur={e => setFilterCurrenсy(handleAmount(e.target.value))}

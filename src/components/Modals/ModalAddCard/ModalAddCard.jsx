@@ -34,11 +34,19 @@ const ModalAddCard = ({
       <div className={s.wrapper}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Title title="Додавання картки" name="titleBig" />
-          {/* register your input into the hook by invoking the "register" function */}
-          <input defaultValue="" {...register('example', { required: true })} />
-
-          {/* include validation with required or other standard HTML validation rules */}
-          <input {...register('exampleRequired', { required: true })} />
+          <input
+            className={s.money}
+            defaultValue=""
+            {...register('number', { required: true })}
+          />
+          <div className={s.inputWrapper}>
+            <input
+              defaultValue=""
+              {...register('expireDate', { required: true })}
+            />
+            <input defaultValue="" {...register('CVV', { required: true })} />
+          </div>
+          <input defaultValue="" {...register('cardHolder')} />
           {/* errors will return when field validation fails  */}
           {errors.exampleRequired && <span>This field is required</span>}
           <div className={s.inputWrapper}>
