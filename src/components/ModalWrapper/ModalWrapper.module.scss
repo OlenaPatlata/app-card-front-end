@@ -8,9 +8,9 @@
     width: calc(100vw - 45px);
   }
   @include vp(tablet) {
-    width: 50vw;
+    width: 40vw;
   }
   @include vp(desktop) {
-    width: 50vw;
+    width: 30vw;
   }
 }

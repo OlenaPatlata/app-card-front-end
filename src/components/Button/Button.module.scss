@@ -11,6 +11,7 @@
   border: 1px solid var(--btn-del-cl);
   transition: all 250ms linear;
   border-radius: 10px;
+  display: block;
   @include vp(tablet) {
     width: 20%;
     @include font(500, 14px, 2.71);
@@ -64,6 +65,7 @@
   transition: all 250ms linear;
   border-radius: 10px;
   margin-left: auto;
+  display: block;
 }
 .editBtn:hover,
 .editBtn:focus {
@@ -95,6 +97,8 @@
   border: 1px solid var(--btn-add-cl);
   transition: all 250ms linear;
   border-radius: 10px;
+  display: block;
+  width: 100%;
   @include vp(tablet) {
     width: 50%;
   }
@@ -130,6 +134,8 @@
   border: 1px solid var(--btn-cancel-cl);
   transition: all 250ms linear;
   border-radius: 10px;
+  display: block;
+  width: 100%;
   @include vp(tablet) {
     width: 50%;
     padding-left: 10px;
