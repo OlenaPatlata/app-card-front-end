@@ -1,57 +1,86 @@
 import s from './ModalAddCard.module.scss';
 import ModalWrapper from 'components/ModalWrapper';
-import Amount from 'components/Amount';
 import Select from 'components/Select';
 import Button from 'components/Button';
 import Title from 'components/Title';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { shemaValidAddCard } from './shemaValidAddCard';
+import Input from 'components/Input';
+import { handleAmount } from 'assets/helpers/form';
+import { getShowNumber } from 'assets/helpers/itemCard/itemCardFunc';
 
-const ModalAddCard = ({
-  open,
-  onClose,
-  elem = { amount: '0', ccy: 'UAN' },
-}) => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+const ModalAddCard = ({ open, onClose }) => {
+  const [fieldCurrecy, setFieldCurrecy] = useState('');
+  const [amountValue, setAmountValue] = useState(0);
+  // const [numbertValue, setNumberValue] = useState(0);
+  const [expireDateValue, setExpireDateValue] = useState(0);
+  const [cvvValue, setCvvValue] = useState(0);
+  const [placeholderValue, setPlaceholderValue] = useState('');
 
-  const onSubmit = data => {
-    console.log(data);
+  const onHandleSubmit = e => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    formData.forEach((value, name) => {
+      console.log(name);
+      console.log(value);
+    });
+
     onClose();
   };
 
-  const [fieldValue, setFieldValue] = useState({ amount: elem.amount });
-  const [fieldCurrecy, setFieldCurrecy] = useState({ ccy: elem.ccy });
-  console.log(fieldValue);
-  console.log(fieldCurrecy);
   return (
     <ModalWrapper open={open} onClose={onClose}>
       <div className={s.wrapper}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={onHandleSubmit} id="1">
           <Title title="Додавання картки" name="titleBig" />
-          <input
-            className={s.money}
-            defaultValue=""
-            {...register('number', { required: true })}
+          <Input
+            name="number"
+            type="text"
+            size="big"
+            placeholder="1234 1234 1234 1234"
+            // setFieldValue={setNumberValue}
+            callback={getShowNumber}
           />
           <div className={s.inputWrapper}>
-            <input
-              defaultValue=""
-              {...register('expireDate', { required: true })}
+            <Input
+              name="expireDate"
+              type="text"
+              size="smoll"
+              placeholder="12/25"
+              // setFieldValue={setExpireDateValue}
+              callback={e => console.log(e)}
             />
-            <input defaultValue="" {...register('CVV', { required: true })} />
+            <Input
+              name="CVV"
+              type="text"
+              size="smoll"
+              placeholder="927"
+              // setFieldValue={setCvvValue}
+              callback={e => console.log(e)}
+            />
           </div>
-          <input defaultValue="" {...register('cardHolder')} />
-          {/* errors will return when field validation fails  */}
-          {errors.exampleRequired && <span>This field is required</span>}
+          <Input
+            name="cardHolder"
+            type="text"
+            size="big"
+            placeholder="Надія Смолянінова"
+            // setFieldValue={setPlaceholderValue}
+            callback={e => console.log(e)}
+            required={false}
+          />
           <div className={s.inputWrapper}>
-            <Amount setFieldValue={setFieldValue} elem={elem} />
-            <Select setFieldCurrecy={setFieldCurrecy} elem={elem} />
+            <Input
+              name="amount"
+              type="text"
+              size="smoll"
+              placeholder="0.00"
+              // setFieldValue={setAmountValue}
+              callback={handleAmount}
+            />
+            <Select
+              // setFieldCurrecy={setFieldCurrecy}
+              style={{ width: '50%' }}
+            />
           </div>
           <div className={s.buttonWrapper}>
             <Button type="submit" text="Save" name="add" />

@@ -70,6 +70,8 @@
   background: var(--additional-bg-cl);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  overflow-y: scroll;
+  max-height: 240px;
 }
 .dropdown__item {
   padding-left: 13px;
