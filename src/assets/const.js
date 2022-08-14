@@ -237,7 +237,8 @@ export const listCards = [
     "expireDate": "12/25",
     "amount": 100.25,
     "ccy": "UAN",
-    "cardHolder":""
+    "cardHolder": "",
+        "CVV": 0,
   },
   {
     "bank": "MonoBancCiprAlways",
@@ -247,7 +248,8 @@ export const listCards = [
     "expireDate": "12/25",
     "amount": 10000.25,
     "ccy": "CNY",
-    "cardHolder":""
+    "cardHolder": "",
+        "CVV": 0,
   },
   {
     "bank": "Mono",
@@ -257,7 +259,8 @@ export const listCards = [
     "expireDate": "12/25",
     "amount": 10000.25,
     "ccy": "UAN",
-    "cardHolder":""
+    "cardHolder": "",
+        "CVV": 0,
   },
   {
     "bank": "Mono",
@@ -267,9 +270,11 @@ export const listCards = [
     "expireDate": "12/01",
     "amount": 1200.25,
     "ccy": "UAN",
-    "cardHolder":""
+    "cardHolder": "",
+        "CVV": 0,
+
   },
-    {
+  {
     "bank": "MonoPOle",
     "type": "Debet",
     "paymentSystemType": "MasterCard",
@@ -277,9 +282,10 @@ export const listCards = [
     "expireDate": "12/01",
     "amount": 5060,
     "ccy": "EUR",
-    "cardHolder":""
+    "cardHolder": "",
+    "CVV": 0,
   }
-]
+];
 
 export const user = {
   "name": "mister Smith",

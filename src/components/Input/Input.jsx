@@ -10,6 +10,7 @@ const Input = ({
   callback,
   size,
   title,
+  style,
 }) => {
   const [filterCurrenсy, setFilterCurrenсy] = useState(init);
   const onChangeFilter = e => {
@@ -18,7 +19,7 @@ const Input = ({
     setFilterCurrenсy(value);
   };
   return (
-    <div className={s[size]}>
+    <div className={s[size]} style={style}>
       <input
         autoComplete="off"
         name={name}

@@ -48,13 +48,13 @@ const Select = ({ setFieldCurrecy, elem, style }) => {
   useCloseByEsc(closeSelect, isActive);
 
   return (
-    <div className={s.dropdown} ref={ulRef} style={style}>
+    <div className={s.dropdown} ref={ulRef}>
       <div className={s.dropdown__wrapper} onClick={handleClick}>
         <input
           autoComplete="off"
           className={s.dropdown__input}
           type="text"
-          name="filter"
+          name="ccy"
           value={filterCurrenсy}
           onChange={onChangeFilter}
           placeholder="Choose currency"

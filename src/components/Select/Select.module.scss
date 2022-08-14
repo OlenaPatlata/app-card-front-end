@@ -29,7 +29,7 @@
   align-items: center;
 }
 .dropdown__wrapper .dropdown__input {
-  width: 90%;
+  width: 100%;
   // height: 100%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -40,6 +40,15 @@
   margin: 0;
   padding: 0;
 }
+
+.dropdown__wrapper .dropdown__input::placeholder {
+  @include font(500, 12px, 1.7);
+  color: var(--placeholder-text-cl);
+  @include vp(mobile) {
+    text-align: center;
+  }
+}
+
 .dropdown__btn {
   border: none;
   background-color: transparent;
