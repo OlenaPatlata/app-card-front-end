@@ -3,6 +3,7 @@ import Button from 'components/Button';
 import Media from 'react-media';
 import { GrEdit } from 'react-icons/gr';
 import { v4 as uuidv4 } from 'uuid';
+import { handleAmount } from 'assets/helpers/form';
 
 const ItemText = ({ name, onClick, text, elem, title, setElem }) => {
   const handleId = e => {
@@ -16,7 +17,7 @@ const ItemText = ({ name, onClick, text, elem, title, setElem }) => {
           <div className={s.cardNameBanc}>{elem?.bank}</div>
         )}
         <div className={s.cardAmount}>
-          {elem.amount}&nbsp;{elem.ccy}
+          {handleAmount(String(elem.amount))}&nbsp;{elem.ccy}
         </div>
       </div>
 

@@ -61,6 +61,7 @@ const ModalAddCard = ({ open, onClose }) => {
       arrBody.bank = bankInfo.bank || 'Bank';
       arrBody.type = bankInfo?.type?.toLowerCase();
       arrBody.paymentSystemType = bankInfo?.card?.toLowerCase();
+      toast.success(`The card has already added`);
       onClose();
     } catch (error) {
       console.log(error);
@@ -127,7 +128,7 @@ const ModalAddCard = ({ open, onClose }) => {
             />
             <Select
               // setFieldCurrecy={setFieldCurrecy}
-              style={{ width: '50%', marginLeft: '15px' }}
+              size="true"
             />
           </div>
           <div className={s.buttonWrapper}>

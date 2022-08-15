@@ -238,7 +238,7 @@ export const listCards = [
     "amount": 100.25,
     "ccy": "UAN",
     "cardHolder": "",
-        "CVV": 0,
+    "CVV": 0,
   },
   {
     "bank": "MonoBancCiprAlways",

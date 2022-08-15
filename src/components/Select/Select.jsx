@@ -4,7 +4,7 @@ import { useCloseByEsc } from 'hooks/useCloseByEsc';
 import { useMouseClose } from 'hooks/useMouseClose';
 import s from './Select.module.scss';
 
-const Select = ({ setFieldCurrecy, elem, style }) => {
+const Select = ({ setFieldCurrecy, elem, size }) => {
   const [isActive, setIsActive] = useState(false);
   const [filterCurrenсy, setFilterCurrenсy] = useState(elem?.ccy || '');
 
@@ -48,7 +48,7 @@ const Select = ({ setFieldCurrecy, elem, style }) => {
   useCloseByEsc(closeSelect, isActive);
 
   return (
-    <div className={s.dropdown} ref={ulRef}>
+    <div className={size ? s.dropdownAdd : s.dropdownEdit} ref={ulRef}>
       <div className={s.dropdown__wrapper} onClick={handleClick}>
         <input
           autoComplete="off"
