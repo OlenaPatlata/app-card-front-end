@@ -13,12 +13,18 @@ const Field = props => {
     fieldStyle,
     hasError,
   } = props;
+  const [valueLocal, setValueLocal] = useState('');
+  const onSetValue = e => {
+    setValueLocal(e.target.value);
+  };
+
   const onHandleChange = useCallback(
     e => {
-      const { value } = e.target;
-      onFieldChange(fieldName, value);
+      // const { value } = e.target;
+      onFieldChange(fieldName, valueLocal);
+      console.log(valueLocal);
     },
-    [onFieldChange, fieldName]
+    [onFieldChange, valueLocal, fieldName]
   );
 
   return (
@@ -28,8 +34,9 @@ const Field = props => {
         type={fieldType}
         name={fieldName}
         id={fieldName}
-        onChange={onHandleChange}
-        value={fieldValue}
+        onBlur={onHandleChange}
+        value={valueLocal}
+        onChange={onSetValue}
         placeholder={fieldPlaceholder}
         title={fieldTitle}
       />

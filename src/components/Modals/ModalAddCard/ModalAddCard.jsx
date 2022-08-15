@@ -1,4 +1,4 @@
-import { memo, useState, useCallback } from 'react';
+import { memo, useState, useCallback, useReducer } from 'react';
 import update from 'immutability-helper';
 import ModalWrapper from 'components/ModalWrapper';
 import Form from 'components/Form';
@@ -9,7 +9,47 @@ import * as yup from 'yup';
 import { getShowNumber } from 'assets/helpers/itemCard/itemCardFunc';
 import s from './ModalAddCard.module.scss';
 
+const CONST__TYPE = {
+  NUMBER: 'number',
+  EXPIREDATE: 'expireDate',
+  CVV: 'cvv',
+  CARDHOLDER: 'cardHolder',
+  AMOUNT: 'amount',
+  CCY: 'ccy',
+  RESET: 'reset',
+};
+const initialState = {
+  number: '',
+  expireDate: '',
+  cvv: '',
+  cardHolder: '',
+  amount: '',
+  ccy: '',
+};
+const reducer = (state, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case CONST__TYPE.NUMBER:
+      return { ...state, number: payload };
+    case CONST__TYPE.EXPIREDATE:
+      return { ...state, expireDate: payload };
+    case CONST__TYPE.CVV:
+      return { ...state, cvv: payload };
+    case CONST__TYPE.CARDHOLDER:
+      return { ...state, cardHolder: payload };
+    case CONST__TYPE.AMOUNT:
+      return { ...state, amount: payload };
+    case CONST__TYPE.CCY:
+      return { ...state, ccy: payload };
+    case CONST__TYPE.RESET:
+      return initialState;
+    default:
+      return state;
+  }
+};
+
 const ModalAddCard = ({ open, onClose }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
   const arrBody = {
     bank: '',
     type: '',
@@ -22,14 +62,14 @@ const ModalAddCard = ({ open, onClose }) => {
     cvv: 0,
   };
   // Create state for form values:
-  const [values, setValues] = useState({
-    number: 0,
-    expireDate: '',
-    cvv: 0,
-    cardHolder: '',
-    amount: 0,
-    ccy: '',
-  });
+  // const [values, setValues] = useState({
+  //   number: '',
+  //   expireDate: '',
+  //   cvv: '',
+  //   cardHolder: '',
+  //   amount: '',
+  //   ccy: '',
+  // });
   // Create state for form errors:
   const [errors, setErrors] = useState({
     number: false,
@@ -41,16 +81,23 @@ const ModalAddCard = ({ open, onClose }) => {
   });
   // Create handler for input change event:
   const onFieldChange = useCallback((fieldName, value) => {
-    setValues(prevValues =>
-      update({ ...prevValues, [fieldName]: { $set: value } })
-    );
+    console.log(fieldName);
+    console.log(value);
+    dispatch({ type: fieldName, payload: value });
+    // setValues(prevValues =>
+    //   update(prevValues, {
+    //     [fieldName]: {
+    //       $set: value,
+    //     },
+    //   })
+    // );
   }, []);
 
   // Create handler for form submit event:
   const onSubmit = useCallback(
     async e => {
       e.preventDefault();
-      const isFormValid = await shemaValidAddCard.isValid(values, {
+      const isFormValid = await shemaValidAddCard.isValid(state, {
         abortEarly: false,
       });
       if (isFormValid) {
@@ -75,15 +122,23 @@ const ModalAddCard = ({ open, onClose }) => {
         // toast.success(`The card has already added`);
         // onClose();
       } else {
-        shemaValidAddCard.validate(values, { abortEarly: false }).catch(err => {
+        shemaValidAddCard.validate(state, { abortEarly: false }).catch(err => {
           const errors = err.inner.reduce((acc, error) => {
-            return { ...acc, [error.path]: true };
+            return {
+              ...acc,
+              [error.path]: true,
+            };
           }, {});
-          setErrors(prevErrors => update(prevErrors, { $set: errors }));
+
+          setErrors(prevErrors =>
+            update(prevErrors, {
+              $set: errors,
+            })
+          );
         });
       }
     },
-    [values]
+    [state]
   );
 
   return (
@@ -91,7 +146,7 @@ const ModalAddCard = ({ open, onClose }) => {
       <Form
         onClose={onClose}
         onSubmit={onSubmit}
-        values={values}
+        values={state}
         errors={errors}
         onFieldChange={onFieldChange}
       />
