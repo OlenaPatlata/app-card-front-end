@@ -3,7 +3,7 @@ import ModalWrapper from 'components/ModalWrapper';
 import Select from 'components/Select';
 import Button from 'components/Button';
 import { useState } from 'react';
-import Input from 'components/Input';
+import Field from 'components/Field';
 import { handleAmount } from 'assets/helpers/form';
 
 const ModalEditCash = ({ open, onClose, elem }) => {
@@ -17,15 +17,15 @@ const ModalEditCash = ({ open, onClose, elem }) => {
     <ModalWrapper open={open} onClose={onClose}>
       <div className={s.wrapper}>
         <div className={s.inputWrapper}>
-          <Input
-            name="amount"
-            size="medium"
-            type="text"
-            placeholder="0.00"
+          <Field
+            fieldName="amount"
+            fieldSize="medium"
+            fieldType="text"
+            fieldPlaceholder="0.00"
             setFieldValue={setFieldValue}
             init={elem ? handleAmount(String(elem.amount)) : ''}
             callback={handleAmount}
-            title="Please input amount"
+            fieldTitle="Please input amount"
           />
           <Select setFieldCurrecy={setFieldCurrecy} elem={elem} />
         </div>

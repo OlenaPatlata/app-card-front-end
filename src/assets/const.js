@@ -238,7 +238,7 @@ export const listCards = [
     "amount": 100.25,
     "ccy": "UAN",
     "cardHolder": "",
-    "CVV": 0,
+    "cvv": 0,
   },
   {
     "bank": "MonoBancCiprAlways",
@@ -249,7 +249,7 @@ export const listCards = [
     "amount": 10000.25,
     "ccy": "CNY",
     "cardHolder": "",
-        "CVV": 0,
+        "cvv": 0,
   },
   {
     "bank": "Mono",
@@ -260,7 +260,7 @@ export const listCards = [
     "amount": 10000.25,
     "ccy": "UAN",
     "cardHolder": "",
-        "CVV": 0,
+        "cvv": 0,
   },
   {
     "bank": "Mono",
@@ -271,7 +271,7 @@ export const listCards = [
     "amount": 1200.25,
     "ccy": "UAN",
     "cardHolder": "",
-        "CVV": 0,
+        "cvv": 0,
 
   },
   {
@@ -283,7 +283,7 @@ export const listCards = [
     "amount": 5060,
     "ccy": "EUR",
     "cardHolder": "",
-    "CVV": 0,
+    "cvv": 0,
   }
 ];
 

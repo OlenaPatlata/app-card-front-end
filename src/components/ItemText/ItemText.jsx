@@ -17,7 +17,7 @@ const ItemText = ({ name, onClick, text, elem, title, setElem }) => {
           <div className={s.cardNameBanc}>{elem?.bank}</div>
         )}
         <div className={s.cardAmount}>
-          {handleAmount(String(elem.amount))}&nbsp;{elem.ccy}
+          {handleAmount(String(elem?.amount))}&nbsp;{elem.ccy}
         </div>
       </div>
 

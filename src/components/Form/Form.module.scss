@@ -1,0 +1,73 @@
+@import '../../assets/sass/main.scss';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include vp(tablet) {
+    flex-direction: row;
+  }
+}
+
+.fieldWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.money {
+  width: 100%;
+  // height: 32px;
+  @include font(500, 14px, 1.7);
+  color: var(--main-text-cl);
+  text-align: left;
+  border: none;
+  outline: none;
+
+  @include vp(mobile) {
+    // margin-bottom: 0px;
+    text-align: center;
+  }
+  @include vp(tablet) {
+    justify-content: start;
+  }
+  &::placeholder {
+    @include font(500, 14px, 1.7);
+    color: var(--placeholder-text-cl);
+    @include vp(mobile) {
+      text-align: center;
+    }
+  }
+  &Wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border: 1px solid var(--placeholder-text-cl);
+    background-color: var(--additional-bg-cl);
+    box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    @include vp(tablet) {
+      justify-content: start;
+      width: 50%;
+      margin-right: 15px;
+      margin-bottom: 0;
+    }
+  }
+  &Error {
+    color: var(btn-del-color-hover);
+    position: absolute;
+    top: 35px;
+  }
+}

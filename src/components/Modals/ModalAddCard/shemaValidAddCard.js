@@ -6,5 +6,5 @@ export const shemaValidAddCard = yup.object().shape({
   cvv: yup.number().positive().min(3).max(3).required(),
   cardHolder: yup.string().default(''),
   amount: yup.number().positive().required(),
-  ccy: yup.string().required(),
+  ccy: yup.string().min(3).max(3).required(),
 }).required();
