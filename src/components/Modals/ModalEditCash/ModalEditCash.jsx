@@ -11,8 +11,7 @@ const ModalEditCash = ({ open, onClose, elem }) => {
     amount: elem?.amount || '',
   });
   const [fieldCurrecy, setFieldCurrecy] = useState({ ccy: elem?.ccy || '' });
-  console.log(fieldValue);
-  console.log(fieldCurrecy);
+
   return (
     <ModalWrapper open={open} onClose={onClose}>
       <div className={s.wrapper}>

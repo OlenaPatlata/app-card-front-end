@@ -1,7 +1,7 @@
 import s from './Field.module.scss';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useState } from 'react';
 
-const Field = memo(props => {
+const Field = props => {
   const {
     fieldType,
     fieldName,
@@ -20,6 +20,7 @@ const Field = memo(props => {
     },
     [onFieldChange, fieldName]
   );
+
   return (
     <fieldset className={s[fieldSize]} style={fieldStyle}>
       <input
@@ -30,7 +31,6 @@ const Field = memo(props => {
         onChange={onHandleChange}
         value={fieldValue}
         placeholder={fieldPlaceholder}
-        required
         title={fieldTitle}
       />
       {hasError && (
@@ -40,6 +40,6 @@ const Field = memo(props => {
       )}
     </fieldset>
   );
-});
+};
 
 export default Field;
