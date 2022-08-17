@@ -2,12 +2,21 @@ import { memo, useState, useCallback, useReducer } from 'react';
 import update from 'immutability-helper';
 import ModalWrapper from 'components/ModalWrapper';
 import Form from 'components/Form';
-import { shemaValidAddCard } from './shemaValidAddCard';
+// import { shemaValidAddCard } from './shemaValidAddCard';
 import { getBankInfo } from 'utils/apiNumber';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
 import { getShowNumber } from 'assets/helpers/itemCard/itemCardFunc';
 import s from './ModalAddCard.module.scss';
+
+const shemaValidAddCard = yup.object().shape({
+  number: yup.string().min(16).required(),
+  expireDate: yup.string().required(),
+  cvv: yup.string().min(3).required(),
+  cardHolder: yup.string().default(''),
+  amount: yup.number().positive().required(),
+  ccy: yup.string().min(3).required(),
+});
 
 const CONST__TYPE = {
   NUMBER: 'number',
@@ -48,7 +57,7 @@ const reducer = (state, action) => {
   }
 };
 
-const ModalAddCard = ({ open, onClose }) => {
+const ModalAddCard = memo(({ open, onClose }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const arrBody = {
     bank: '',
@@ -152,6 +161,21 @@ const ModalAddCard = ({ open, onClose }) => {
       />
     </ModalWrapper>
   );
-};
+});
 
 export default ModalAddCard;
+
+// <form>
+//   <label for="cc-num">Credit Card Number</label>
+//   <input type="text" id="cc-num" autocomplete="cc-number" x-autocompletetype="cc-number" pattern="\d*">
+
+//   <label for="cc-exp-month">Expiration Month</label>
+//   <input type="number" id="cc-exp-month" name="cc-exp-month" autocomplete="cc-exp-month" x-autocompletetype="cc-exp-month">
+
+//   <label for="cc-exp-year">Expiration Year</label>
+//   <input type="number" id="cc-exp-year" name="cc-exp-year" autocomplete="cc-exp-year" x-autocompletetype="cc-exp-year">
+
+//   <label for="cvv2">CVV</label>
+//   <input type="text" id="cvv2" name="cvv2" autocomplete="cc-csc">
+
+// </form>

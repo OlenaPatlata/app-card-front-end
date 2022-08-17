@@ -1,44 +1,43 @@
 import s from './Field.module.scss';
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback } from 'react';
 
 const Field = props => {
   const {
     fieldType,
     fieldName,
-    onFieldChange,
     fieldValue,
     fieldPlaceholder,
     fieldSize,
     fieldTitle,
     fieldStyle,
     hasError,
+    autocomplete,
+    onFieldChange,
+    xAutocompletetype,
+    pattern,
   } = props;
-  const [valueLocal, setValueLocal] = useState('');
-  const onSetValue = e => {
-    setValueLocal(e.target.value);
-  };
 
-  const onHandleChange = useCallback(
-    e => {
-      // const { value } = e.target;
-      onFieldChange(fieldName, valueLocal);
-      console.log(valueLocal);
+  const onFieldHandleChange = useCallback(
+    event => {
+      props.onFieldChange(fieldName, event.target.value);
     },
-    [onFieldChange, valueLocal, fieldName]
+    [onFieldChange, fieldName]
   );
 
   return (
     <fieldset className={s[fieldSize]} style={fieldStyle}>
+      <label htmlFor={fieldName}>{fieldName}</label>
       <input
-        autoComplete="off"
         type={fieldType}
         name={fieldName}
         id={fieldName}
-        onBlur={onHandleChange}
-        value={valueLocal}
-        onChange={onSetValue}
+        autocomplete={autocomplete}
+        x-autocompletetype={xAutocompletetype}
+        // onBlur={onHandleChange}
+        value={fieldValue}
+        onChange={onFieldHandleChange}
         placeholder={fieldPlaceholder}
-        title={fieldTitle}
+        pattern={pattern}
       />
       {hasError && (
         <p
