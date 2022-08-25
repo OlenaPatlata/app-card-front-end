@@ -11,7 +11,7 @@ const Form = ({ onClose, onSubmit, values, errors, onFieldChange }) => (
   <form className={s.wrapper} onSubmit={onSubmit} noValidate>
     <Title title="Додавання картки" name="titleBig" />
     <Field
-      key={uuidv4()}
+      key="number"
       fieldType="text"
       // autocomplete="cc-number"
       // xAutocompletetype="cc-number"
@@ -26,7 +26,7 @@ const Form = ({ onClose, onSubmit, values, errors, onFieldChange }) => (
     />
     <div className={s.fieldWrapper}>
       <Field
-        key={uuidv4()}
+        key="expireDate"
         fieldType="text"
         fieldName="expireDate"
         fieldValue={values.expireDate}
@@ -38,7 +38,7 @@ const Form = ({ onClose, onSubmit, values, errors, onFieldChange }) => (
         // autocomplete="cc-exp"
       />
       <Field
-        key={uuidv4()}
+        key="cvv"
         fieldType="text"
         fieldName="cvv"
         fieldValue={values.cvv}
@@ -50,7 +50,7 @@ const Form = ({ onClose, onSubmit, values, errors, onFieldChange }) => (
       />
     </div>
     <Field
-      key={uuidv4()}
+      key="cardHolder"
       fieldType="text"
       fieldName="cardHolder"
       fieldValue={values.cardHolder}
@@ -63,7 +63,7 @@ const Form = ({ onClose, onSubmit, values, errors, onFieldChange }) => (
     />
     <div className={s.fieldWrapper}>
       <Field
-        key={uuidv4()}
+        key="amount"
         fieldType="text"
         fieldName="amount"
         fieldValue={values.amount}
