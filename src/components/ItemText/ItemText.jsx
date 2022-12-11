@@ -13,7 +13,7 @@ const ItemText = ({ name, onClick, text, elem, title, setElem }) => {
     <li className={s[name]} id={uuidv4()} onClick={handleId}>
       <div className={s.textWrapper}>
         <div className={s.empty}>-</div>
-        {title === 'Мої картки' && (
+        {title === 'My carts' && (
           <div className={s.cardNameBanc}>{elem?.bank}</div>
         )}
         <div className={s.cardAmount}>
@@ -21,7 +21,7 @@ const ItemText = ({ name, onClick, text, elem, title, setElem }) => {
         </div>
       </div>
 
-      {title !== 'Баланс' && (
+      {title !== 'Balance' && (
         <Media
           queries={{
             small: '(max-width: 767px)',

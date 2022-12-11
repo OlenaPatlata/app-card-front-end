@@ -11,6 +11,9 @@ const ModalEditCash = ({ open, onClose, elem }) => {
     amount: elem?.amount || '',
   });
   const [fieldCurrecy, setFieldCurrecy] = useState({ ccy: elem?.ccy || '' });
+  const onFieldChange = (e) => {
+    console.log("You don`t know", e)
+  }
 
   return (
     <ModalWrapper open={open} onClose={onClose}>
@@ -25,6 +28,7 @@ const ModalEditCash = ({ open, onClose, elem }) => {
             init={elem ? handleAmount(String(elem.amount)) : ''}
             callback={handleAmount}
             fieldTitle="Please input amount"
+            onFieldChange={onFieldChange}
           />
           <Select setFieldCurrecy={setFieldCurrecy} elem={elem} />
         </div>

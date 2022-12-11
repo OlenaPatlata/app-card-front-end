@@ -31,7 +31,7 @@ const Field = props => {
         type={fieldType}
         name={fieldName}
         id={fieldName}
-        autocomplete={autocomplete}
+        autoComplete={autocomplete}
         x-autocompletetype={xAutocompletetype}
         // onBlur={onHandleChange}
         value={fieldValue}

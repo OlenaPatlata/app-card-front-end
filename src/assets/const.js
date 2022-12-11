@@ -254,7 +254,7 @@ export const listCards = [
   {
     "bank": "Mono",
     "type": "Universal",
-    "paymentSystemType": "Another type sistem",
+    "paymentSystemType": "Another type system",
     "number": 1234123412341234,
     "expireDate": "12/25",
     "amount": 10000.25,

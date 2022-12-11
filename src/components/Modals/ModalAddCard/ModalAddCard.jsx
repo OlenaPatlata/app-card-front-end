@@ -90,46 +90,40 @@ const ModalAddCard = memo(({ open, onClose }) => {
   });
   // Create handler for input change event:
   const onFieldChange = useCallback((fieldName, value) => {
-    console.log(fieldName);
-    console.log(value);
     dispatch({ type: fieldName, payload: value });
-    // setValues(prevValues =>
-    //   update(prevValues, {
-    //     [fieldName]: {
-    //       $set: value,
-    //     },
-    //   })
-    // );
   }, []);
 
   // Create handler for form submit event:
   const onSubmit = useCallback(
     async e => {
       e.preventDefault();
+      // console.log(111111);
+      // console.log(state);
       const isFormValid = await shemaValidAddCard.isValid(state, {
         abortEarly: false,
       });
+      // console.log(isFormValid);
       if (isFormValid) {
         console.log('Form is legit');
-        // const formData = new FormData(e.currentTarget);
-        // formData.forEach((value, name) => {
-        //   if (name === 'number') {
-        //     arrBody[name] = Number(value);
-        //   } else {
-        //     arrBody[name] = value;
-        //   }
-        // });
-        // const bankInfo = await getBankInfo(String(arrBody.number).slice(0, 6));
-        // if (bankInfo?.valid === 'false') {
-        //   toast.error(`Number ${arrBody.number} is invalid`);
-        //   onClose();
-        //   return;
-        // }
-        // arrBody.bank = bankInfo.bank || 'Bank';
-        // arrBody.type = bankInfo?.type?.toLowerCase();
-        // arrBody.paymentSystemType = bankInfo?.card?.toLowerCase();
-        // toast.success(`The card has already added`);
-        // onClose();
+        const formData = new FormData(e.currentTarget);
+        formData.forEach((value, name) => {
+          if (name === 'number') {
+            arrBody[name] = Number(value);
+          } else {
+            arrBody[name] = value;
+          }
+        });
+        const bankInfo = await getBankInfo(String(arrBody.number).slice(0, 6));
+        if (bankInfo?.valid === 'false') {
+          toast.error(`Number ${arrBody.number} is invalid`);
+          onClose();
+          return;
+        }
+        arrBody.bank = bankInfo.bank || 'Bank';
+        arrBody.type = bankInfo?.type?.toLowerCase();
+        arrBody.paymentSystemType = bankInfo?.card?.toLowerCase();
+        toast.success(`The card has already added`);
+        onClose();
       } else {
         shemaValidAddCard.validate(state, { abortEarly: false }).catch(err => {
           const errors = err.inner.reduce((acc, error) => {

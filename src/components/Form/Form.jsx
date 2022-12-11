@@ -4,7 +4,7 @@ import Button from 'components/Button';
 import Title from 'components/Title';
 import Field from 'components/Field';
 import { handleAmount } from 'assets/helpers/form';
-import { v4 as uuidv4 } from 'uuid';
+
 import s from './Form.module.scss';
 
 const Form = ({ onClose, onSubmit, values, errors, onFieldChange }) => (

@@ -16,13 +16,13 @@ const WrapperLeft = () => {
   return (
     <div className={s.wrapperLeft}>
       <div className={s.partWrapper}>
-        <Title title="Баланс" name="titleSmall" />
-        <List title="Баланс" name="itemText" arr={balanceArr} />
+        <Title title="Balance" name="titleSmall" />
+        <List title="Balance" name="itemText" arr={balanceArr} />
       </div>
       <div className={s.partWrapper}>
-        <Title title="Готівка" name="titleSmall" />
+        <Title title="Cash" name="titleSmall" />
         <List
-          title="Готівка"
+          title="Cash"
           name="itemText"
           setElem={setElem}
           arr={
@@ -42,9 +42,9 @@ const WrapperLeft = () => {
         />
       </div>
       <div className={s.partWrapper}>
-        <Title title="Мої картки" name="titleSmall" />
+        <Title title="My carts" name="titleSmall" />
         <List
-          title="Мої картки"
+          title="My carts"
           name="itemText"
           arr={listCards}
           text="Edit"

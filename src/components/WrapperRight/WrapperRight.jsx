@@ -20,14 +20,14 @@ const WrapperRight = () => {
           onClick={e => {
             setAddModal(true);
           }}
-          text="Додати картку"
+          text="Add cart"
           name="add"
         />
         <Button
           onClick={e => {
             setEditModal(true);
           }}
-          text="Додати готівку"
+          text="Add cash"
           name="add"
         />
       </div>
