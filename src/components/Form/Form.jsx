@@ -1,4 +1,4 @@
-import { memo } from 'react';
+// import { memo } from 'react';
 import Select from 'components/Select';
 import Button from 'components/Button';
 import Title from 'components/Title';

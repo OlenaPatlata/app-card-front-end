@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { memo, useState, useCallback, useReducer } from 'react';
 import update from 'immutability-helper';
 import ModalWrapper from 'components/ModalWrapper';
@@ -6,8 +7,8 @@ import Form from 'components/Form';
 import { getBankInfo } from 'utils/apiNumber';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
-import { getShowNumber } from 'assets/helpers/itemCard/itemCardFunc';
-import s from './ModalAddCard.module.scss';
+// import { getShowNumber } from 'assets/helpers/itemCard/itemCardFunc';
+// import s from './ModalAddCard.module.scss';
 
 const shemaValidAddCard = yup.object().shape({
   number: yup.string().min(16).required(),
