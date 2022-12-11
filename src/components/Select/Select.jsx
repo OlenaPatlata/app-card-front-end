@@ -4,9 +4,9 @@ import { useCloseByEsc } from 'hooks/useCloseByEsc';
 import { useMouseClose } from 'hooks/useMouseClose';
 import s from './Select.module.scss';
 
-const Select = ({ setFieldCurrecy, elem }) => {
+const Select = ({ setFieldCurrecy, elem, size }) => {
   const [isActive, setIsActive] = useState(false);
-  const [filterCurrenсy, setFilterCurrenсy] = useState(elem.ccy);
+  const [filterCurrenсy, setFilterCurrenсy] = useState(elem?.ccy || '');
 
   // При клике по инпутy открывается/закрывается селект
   const handleClick = () => {
@@ -48,30 +48,17 @@ const Select = ({ setFieldCurrecy, elem }) => {
   useCloseByEsc(closeSelect, isActive);
 
   return (
-    <div className={s.dropdown} ref={ulRef}>
+    <div className={size ? s.dropdownAdd : s.dropdownEdit} ref={ulRef}>
       <div className={s.dropdown__wrapper} onClick={handleClick}>
-        {isActive ? (
-          <input
-            autoComplete="off"
-            className={s.dropdown__input}
-            type="text"
-            name="filter"
-            value={filterCurrenсy}
-            onChange={onChangeFilter}
-            placeholder="Choose currency"
-          />
-        ) : (
-          <input
-            autoComplete="off"
-            readOnly
-            className={s.dropdown__input}
-            type="text"
-            name="filter"
-            value={filterCurrenсy}
-            onChange={onChangeFilter}
-            placeholder="Choose currency"
-          />
-        )}
+        <input
+          autoComplete="off"
+          className={s.dropdown__input}
+          type="text"
+          name="ccy"
+          value={filterCurrenсy}
+          onChange={onChangeFilter}
+          placeholder="Choose currency"
+        />
       </div>
       {isActive && (
         <ul className={s.dropdown__content}>
@@ -81,7 +68,7 @@ const Select = ({ setFieldCurrecy, elem }) => {
               onClick={e => {
                 setFilterCurrenсy(elem.ccy);
                 setIsActive(false);
-                setFieldCurrecy({ ccy: filterCurrenсy });
+                // setFieldCurrecy({ ccy: filterCurrenсy });
               }}
               className={s.dropdown__item}
             >

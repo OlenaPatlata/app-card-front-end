@@ -31,10 +31,6 @@ export const getHideNumber = (number) => {
 
 export const getShowNumber = (number) => {
     const array=String(number).split('');
-  // const array = [];
-  // arrNumbers.map((elem, index) =>
-  //   index < 4 || index > 11 ? array.push(elem) : array.push('*')
-  // );
   const arrayFirst = [];
   const arraySecond = [' '];
   const arrayThird = [' '];

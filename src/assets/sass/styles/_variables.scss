@@ -1,21 +1,32 @@
 :root {
   --body-bg: #e5e5e5;
-  --main-text-cl: #242a37;
+
   --buttons-text-cl: #ffffff;
-  --btn-del-color: rgb(226, 88, 88);
-  --btn-del-color-hover: rgb(153, 29, 29);
+
   --error-page-fill: #969696;
   --secondary-text-cl: #898f9f;
-  --placeholder-text-cl: #a6abb9;
-  --additional-text-cl: #000000;
-  --auth-bg-cl: #f5f7fa;
-  --main-bg-cl: #ffffff;
-  --secondary-bg-cl: #f6f7fb;
-  --additional-bg-cl: #6d7a8d;
+
   --training-bg-cl: #b1b5c2;
   --chart-plan-cl: #091e3f;
-  --accent-active-cl: #ff6b08;
-  --accent-active-cl-hover: #da5b06;
+
+  --placeholder-text-cl: #a6abb9;
   --scrollbar-bg-cl: #e0e5eb;
+  --main-bg-cl: #e1dbe5;
+  --secondary-bg-cl: #f9f3f5;
+  --additional-bg-cl: #ffffff;
+  --auth-bg-cl: #f5f7fa;
+  --main-text-cl: #242a37;
+  --additional-text-cl: #000000;
   --modal-overlay: rgba(43, 43, 43, 0.1);
+  --btn-del-cl: #e34f6f;
+  --btn-del-cl-hover: #faa476;
+  --btn-del-cl-active: #fcde9c;
+  --btn-add-cl: #0b5d37;
+  --btn-add-cl-hover: #6ca589;
+  --btn-add-cl-active: #b3b3bd;
+  --btn-edit-cl: #adb5d3;
+  --btn-edit-cl-hover: #f6e8da;
+  --btn-edit-cl-active: #fef6b5;
+  --btn-cancel-cl: #f6e8da;
+  --btn-cancel-cl-hover: #cfd1e0;
 }

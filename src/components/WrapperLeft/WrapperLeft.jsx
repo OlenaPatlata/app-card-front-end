@@ -4,8 +4,9 @@ import { listCards, user } from 'assets/const';
 import Title from 'components/Title';
 import { getBalanceArr } from 'assets/helpers/wrapperLeft/wrapperLeftFunc';
 import useToggle from './../../hooks/useToggle';
-import ModalEditCash from './../Modals/ModalEditCash/ModalEditCash';
+
 import { useState } from 'react';
+import ModalEditCash from 'components/Modals/ModalEditCash';
 
 const WrapperLeft = () => {
   const balanceArr = getBalanceArr(listCards, user?.cash);
@@ -15,13 +16,13 @@ const WrapperLeft = () => {
   return (
     <div className={s.wrapperLeft}>
       <div className={s.partWrapper}>
-        <Title title="Баланс" name="titleSmall" />
-        <List title="Баланс" name="itemText" arr={balanceArr} />
+        <Title title="Balance" name="titleSmall" />
+        <List title="Balance" name="itemText" arr={balanceArr} />
       </div>
       <div className={s.partWrapper}>
-        <Title title="Готівка" name="titleSmall" />
+        <Title title="Cash" name="titleSmall" />
         <List
-          title="Готівка"
+          title="Cash"
           name="itemText"
           setElem={setElem}
           arr={
@@ -41,9 +42,9 @@ const WrapperLeft = () => {
         />
       </div>
       <div className={s.partWrapper}>
-        <Title title="Мої картки" name="titleSmall" />
+        <Title title="My carts" name="titleSmall" />
         <List
-          title="Мої картки"
+          title="My carts"
           name="itemText"
           arr={listCards}
           text="Edit"

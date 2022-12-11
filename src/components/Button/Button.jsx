@@ -10,6 +10,7 @@ const Button = ({
   text,
   icon = false,
   children,
+  style,
 }) => {
   return (
     <button
@@ -17,6 +18,7 @@ const Button = ({
       disabled={!disabled}
       onClick={onClick}
       className={icon ? s.iconWrapper : s[name]}
+      style={style}
     >
       {icon ? (
         <IconContext.Provider

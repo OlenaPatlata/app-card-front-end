@@ -113,7 +113,7 @@
 .cardBtnCopy {
   background-color: transparent;
   border: none;
-  color: var(--btn-del-color);
+  color: var(--btn-del-cl);
 }
 .cardDate {
   display: flex;
@@ -146,6 +146,7 @@
   word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 10px;
 }
 
 .one {

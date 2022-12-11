@@ -2,9 +2,9 @@
 .titleWrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   color: var(--main-text-cl);
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 .titleSmall {
   @include font(600, 16px, 1.5);

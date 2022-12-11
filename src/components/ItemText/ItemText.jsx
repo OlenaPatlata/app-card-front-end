@@ -3,6 +3,7 @@ import Button from 'components/Button';
 import Media from 'react-media';
 import { GrEdit } from 'react-icons/gr';
 import { v4 as uuidv4 } from 'uuid';
+import { handleAmount } from 'assets/helpers/form';
 
 const ItemText = ({ name, onClick, text, elem, title, setElem }) => {
   const handleId = e => {
@@ -12,15 +13,15 @@ const ItemText = ({ name, onClick, text, elem, title, setElem }) => {
     <li className={s[name]} id={uuidv4()} onClick={handleId}>
       <div className={s.textWrapper}>
         <div className={s.empty}>-</div>
-        {title === 'Мої картки' && (
+        {title === 'My carts' && (
           <div className={s.cardNameBanc}>{elem?.bank}</div>
         )}
         <div className={s.cardAmount}>
-          {elem.amount}&nbsp;{elem.ccy}
+          {handleAmount(String(elem?.amount))}&nbsp;{elem.ccy}
         </div>
       </div>
 
-      {title !== 'Баланс' && (
+      {title !== 'Balance' && (
         <Media
           queries={{
             small: '(max-width: 767px)',
