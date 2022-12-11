@@ -12,7 +12,9 @@ const ModalEditCash = ({ open, onClose, elem }) => {
   });
   const [fieldCurrecy, setFieldCurrecy] = useState({ ccy: elem?.ccy || '' });
   const onFieldChange = (e) => {
-    console.log("You don`t know", e)
+    console.log("You don`t know", e);
+    console.log(fieldValue);
+    console.log(fieldCurrecy)
   }
 
   return (

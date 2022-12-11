@@ -1,5 +1,5 @@
 import s from './Field.module.scss';
-import { memo, useCallback } from 'react';
+import { useCallback } from 'react';
 
 const Field = props => {
   const {
@@ -8,7 +8,7 @@ const Field = props => {
     fieldValue,
     fieldPlaceholder,
     fieldSize,
-    fieldTitle,
+    // fieldTitle,
     fieldStyle,
     hasError,
     autocomplete,
@@ -19,7 +19,7 @@ const Field = props => {
 
   const onFieldHandleChange = useCallback(
     event => {
-      props.onFieldChange(fieldName, event.target.value);
+      onFieldChange(fieldName, event.target.value);
     },
     [onFieldChange, fieldName]
   );
